@@ -274,13 +274,10 @@ function buildPlots(state){
         state_today_date=Math.round(entries[entries.length-1].date);
         // console.log('state_today_date:'+state_today_date)
 
-       
-
         d3.select("#totalStateCases")
             .text(state_today_cases)
 
         let i;
-
         statesList1=[];
         datesList1=[];
         statesList2=[];
@@ -301,7 +298,6 @@ function buildPlots(state){
 
         dailyCasesList=[]
         dailyDateList1=[]
-
         for (i=1; i<entries.length; i++){
             let dataline=entries[i];
             let yesterdataline=entries[i-1]
@@ -355,12 +351,10 @@ function buildPlots(state){
             d3.select("#totalStateDeaths")
                 .html(state_today_deaths)
     
-    
             let i;
             statesList3=[];
             datesList2=[];
             deathsList2=[]
-    
             for(i=0; i<entries.length; i++){
                 let dataline=entries[i];
                 let date_i =dataline.date;
@@ -372,7 +366,6 @@ function buildPlots(state){
 
             dailyDeathsList=[]
             dailyDateList2=[]
-
             for (i=1; i<entries.length; i++){
                 let dataline=entries[i];
                 let yesterdataline=entries[i-1]
@@ -391,7 +384,6 @@ function buildPlots(state){
             // console.log('x_daily_deaths:'+x_daily_deaths) 
             let y_daily_deaths= dailyDeathsList
             // console.log('y_daily_deaths:'+y_daily_deaths) 
-    
             var Trace2= {
                 x: x_deaths,
                 y: y_deaths,
@@ -548,7 +540,6 @@ function buildPlots(state){
                             daily_deaths_forecasted_i=0
                         };
 
-            
                         dailyForecastedDeathsList.push(daily_deaths_forecasted_i);
                         dailyForecastedDateList2.push(date_i);
                     };
@@ -576,6 +567,8 @@ function buildPlots(state){
                     // console.log('Trace8:'+Trace7)
 
                     var layout = {
+                        autosize=false,
+                        width: 1000,               
                         title: (`${state} Cumulative Covid-19 Cases & Deaths`),
                         xaxis: {
                             title: (`Date`),
@@ -612,6 +605,8 @@ function buildPlots(state){
                         }
                     };
                     var layout2 = {
+                        autosize: false,
+                        width: 1000,
                         title:(`${state} Daily Covid-19 Cases`),
                         xaxis: {
                             title: (`Date`),
@@ -627,12 +622,9 @@ function buildPlots(state){
                             tickfont: {color: 'blue'},
                         },
                         legend: {
-                            // y: 0.5,
-                            // traceorder: 'reversed',
                             font: {
                             size: 16
                             },
-                            // orientation: "h",
                             x:0.1,
                             y:1,
                             bgcolor: '#E2E2E2',
@@ -641,6 +633,8 @@ function buildPlots(state){
                         }
                     };
                     var layout3={
+                        autosize: false,
+                        width: 1000,
                         title:(`${state} Daily Covid-19 Deaths`),
                         xaxis: {
                             title: (`Date`),
@@ -655,12 +649,9 @@ function buildPlots(state){
                             showgrid: false
                         },
                         legend: {
-                            // y: 0.5,
-                            // traceorder: 'reversed',
                             font: {
                             size: 16
                             },
-                            // orientation: "h",
                             x:0.1,
                             y:1,
                             bgcolor: '#E2E2E2',
@@ -671,9 +662,9 @@ function buildPlots(state){
 
                     var config = {responsive: true};
 
-                    Plotly.newPlot('plot', data, layout, config);
-                    Plotly.newPlot('dailycaseplot', data2, layout2, config);
-                    Plotly.newPlot('dailydeathplot', data3, layout3, config);
+                    Plotly.newPlot('plot', data, layout);
+                    Plotly.newPlot('dailycaseplot', data2, layout2);
+                    Plotly.newPlot('dailydeathplot', data3, layout3);
                 });
             });
         });

@@ -440,13 +440,13 @@
                         <div class = "card bg-secondary border-none">
                             <ul class="nav nav-tabs border-none">
                                 <li class="nav-item">
-                                  <a href="#plot"class="nav-link active" data-toggle= "tab">Cumulative Cases</a>
+                                  <a href="#plot"class="nav-link active text-center" data-toggle= "tab">Cumulative Cases</a>
                                 </li>
                                 <li class="nav-item">
-                                  <a href = "#dailycaseplot" class="nav-link" data-toggle= "tab">Daily Cases</a>
+                                  <a href = "#dailycaseplot" class="nav-link text-center" data-toggle= "tab">Daily Cases</a>
                                 </li>
                                 <li class="nav-item">
-                                  <a href= "#dailydeathplot" class="nav-link" data-toggle="tab">Daily Deaths</a>
+                                  <a href= "#dailydeathplot" class="nav-link text-center" data-toggle="tab">Daily Deaths</a>
                                 </li>
                             </ul>
                             <div class = "row card-body  text-center card-width bg-white corner-round active">
@@ -462,23 +462,6 @@
                             </div> 
                             <br> 
                         </div>
-                        
-                        
-
-                    
-                        <!-- <br>
-                        <div class = "row card-body bg-white corner-round">
-                            <div class = "col-lg-12">
-                                <div id = "dailycaseplot"></div>
-                            </div>
-                        </div>
-
-                        <br>
-                        <div class = "row card-body bg-white corner-round">
-                            <div class = "col-lg-12">
-                                <div id = "dailydeathplot"></div>
-                            </div>
-                        </div> -->
 
                     </div>
                    
@@ -529,15 +512,15 @@
             <div class = "row">
                 <div class = "col-lg-12">
                     <div class = "card border bg-secondary px-5 corner-round text-center">
-                        <br>
+                      
                         <p> Note: Data is updated daily from the New York Times public github and reflects the previous day.  
-                            Sarima machine learning models are applied to each state's case and death data in order
-                            to create forecasts.    
+                            Sarima machine learning models are fit to each state's case and death data in order
+                            to create forecasts.   
                         </p>
-                        <p>Forecast data is added to the database.All data is accesible in JSON format through API routes.  All available API routes may be viewed by clicking the API link 
+                        
+                        <!-- <p>All data is accesible in JSON format through API routes.  All available API routes may be viewed by clicking the API link 
                             on the navigation bar.
-                        </p>
-                        <br>
+                        </p> -->
                     </div>
                 </div>  
             </div>
